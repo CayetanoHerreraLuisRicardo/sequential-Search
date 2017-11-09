@@ -15,12 +15,12 @@ activos.push({id:148,LanguageName:"Spanish"});
 
 //se agregan los lenguajes que ya estan en uso 
 //======================ejemplo estatico======================
-uso.push({value:148,label:"Spanish"});
+uso.push({value:148,LanguageName:"Spanish"});
 uso.push({value:29,LanguageName:"Chinese"});
 uso.push({value:40,LanguageName:"English"});
 //============================================================
 
-//el array puede estar undefined o uso.length==0 (que no hay ningun lenguaje en uso)
+//el array puede estar undefined o uso.length===0 (que no hay ningun lenguaje en uso)
 //uso = undefined;
 //==================llenado del array repetidos===============
 if(uso!==undefined)
@@ -36,10 +36,10 @@ console.log(activos);
 //recorrido de repetidos y remueve el elemento de activos
 for(var i = 0; i<repetidos.length; i++)
   removeItem(repetidos[i].value,activos);
-  //or activos.removeItem(repetidos[i])
+  //or activos.removeItem2(repetidos[i])
 //============================================================
 
-//================algotirmo de busqueda secuencial============
+//================algoritmo de busqueda secuencial============
 function search (_pos, _val,_arreglo){
 	if(_pos === 0)
 		return -1;
@@ -57,8 +57,8 @@ function removeItem(_val,_arreglo) {
     if (_arreglo[i].id === _val)
       _arreglo.splice(i, 1);
 };
-//============remueve el elementousando prototype=============
-Array.prototype.removeItem = function (a) {
+//============remueve el elemento usando prototype=============
+Array.prototype.removeItem2 = function (a) {
   for (var i = 0; i < this.length; i++) {
     if (this[i].id === a) {
       this.splice(i, 1);
